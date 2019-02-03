@@ -13,17 +13,31 @@ Java 8 Features:
   Optional is a way of replacing nullable T references with a non-null value.
   An Optional may contain either non-null T reference or nothing.
   
-  * Creation of Optional Objects:
-  There are 3 major ways to create an Optional. 
-  1. Use Optional.empty() to create empty optional
-      Optional<Integer> obj = Optional.empty();
+  I) Creation of Optional Objects:
+    There are 3 major ways to create an Optional. 
+    1. Use Optional.empty() to create empty optional
+       Optional<Integer> obj = Optional.empty();
       
-  2. Use Optioinal.of() to create optional with default non-null value.
-    Optional<Integer>  obj = Optional.of(5);
-    Optional<Integer> nullOptionalObj = Optional.of(null); // thrown NullPoniter exception.
+    2. Use Optioinal.of() to create optional with default non-null value.
+      Optional<Integer>  obj = Optional.of(5);
+      Optional<Integer> nullOptionalObj = Optional.of(null); // thrown NullPoniter exception.
     
-  3.Use Optional.ofNullable() to create an Optional object that may hold null value.
-    Optional<Integer> possible = Optional.ofNullable(null); // Result obj would be empty.O/P:Optional.empty
-    Optional<Integer> possible = Optional.ofNullable(5); O/P: OPtional[5].
+    3.Use Optional.ofNullable() to create an Optional object that may hold null value.
+      Optional<Integer> possible = Optional.ofNullable(null); // Result obj would be empty.O/P:Optional.empty
+      Optional<Integer> possible = Optional.ofNullable(5); O/P: OPtional[5].
+
+  II) Do something  if value is present
+      1.Optional<Integer> obj = Optional.of(5);
+      obj.ifPresent(System.out::print);
+    
+  III) What optional is not trying to solve?
+      Please note that Optional is not meant  to be used in these below contexts.
+      1. In domain model layer(not serializable)
+      2. in DTO's (its not serializable)
+      3. in input parameters of methods
+      4. in constructor parameters.
+   IV) How should Optional is Used
+      Optional should be used almost all the time as the return type of functions.
+    
     
   
