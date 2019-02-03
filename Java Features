@@ -7,8 +7,15 @@ Java 8 Features:
 6. Default Methods
 7. DateTime API
 8. Optionals
+1.Lambda expressions
 
-
+2. forEach:
+    Default implementation of java forEach method(default) in interable interface.
+    Ex: List<Integer> numberList = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+    Consumer<Integer> action = Ststem.out::print;
+    
+    listObj.stream().forEach(action);
+    
 8.Optionals:
   Optional is a way of replacing nullable T references with a non-null value.
   An Optional may contain either non-null T reference or nothing.
