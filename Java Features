@@ -1,2 +1,29 @@
 Java 8 Features:
 1. Lamdba Expressions
+2. forEach
+3. Stream
+4. Functional Interface
+5. Method References
+6. Default Methods
+7. DateTime API
+8. Optionals
+
+
+8.Optionals:
+  Optional is a way of replacing nullable T references with a non-null value.
+  An Optional may contain either non-null T reference or nothing.
+  
+  * Creation of Optional Objects:
+  There are 3 major ways to create an Optional. 
+  1. Use Optional.empty() to create empty optional
+      Optional<Integer> obj = Optional.empty();
+      
+  2. Use Optioinal.of() to create optional with default non-null value.
+    Optional<Integer>  obj = Optional.of(5);
+    Optional<Integer> nullOptionalObj = Optional.of(null); // thrown NullPoniter exception.
+    
+  3.Use Optional.ofNullable() to create an Optional object that may hold null value.
+    Optional<Integer> possible = Optional.ofNullable(null); // Result obj would be empty.O/P:Optional.empty
+    Optional<Integer> possible = Optional.ofNullable(5); O/P: OPtional[5].
+    
+  
