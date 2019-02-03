@@ -1,0 +1,15 @@
+SOLID:
+S- ingle Responsibility:
+	An object should have one and only one responsibility.
+So, Whenever there is a change that needs to happen, there will be only one class to be modified, this class has one primary responsibility.
+O-pen/Closed principle:
+	Software entries should be open for extension, but closed for modification.
+Whenever you need to add additional behaviors, or methods, you don’t have to modify existing one, instead, you start writing new method.
+L-iskov Substitution Principle:
+	A super class can be replaced by any of its inheriting subclass at any parts of the system without any change in code.
+It means that the sub class should extend the functionality of the super class without overriding it.
+I-nterface Segregation Principle:
+	Interface should be specific rather than doing many and different things.
+That’s because any implementing class will only implement the specific method interfaces rather than being forced to implement methods that it doesn’t need it.
+D-ependency Inversion Principle:
+	Try to minimize the dependency between objects by using abstraction.
