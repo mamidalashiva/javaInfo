@@ -1,21 +1,42 @@
 Java 8 Features:
 1. Lamdba Expressions
-2. forEach
+2. Functional Interface
 3. Stream
-4. Functional Interface
+4. forEach
 5. Method References
 6. Default Methods
 7. DateTime API
 8. Optionals
-1.Lambda expressions
 
-2. forEach:
+
+1.Lambda expressions:
+    A landba expression is just an anonymous function and they are passed (mostly) to other functions as parameters.The most important feature of  Lamdba Expression is that "they execute in the context of 
+    their  appearance.So, similar lamdba expression can be executed differently in some other context.
+    Syntax:
+        (x, y) -> x + y // This function takes twoparamters and return sum.
+    Ex:
+    1. (int a, int b) ->    a * b 
+    2. (a, b) ->   a - b 
+    3. () -> 99
+    4. (String s)-> System.out.println(s);
+    5. a->2*a;
+    6. c->{/* some complex statement*/}
+
+
+    
+ 2. Functional Interface:
+    Single Abstract method interfaces.Java 8, enforces the rule of single responsibility by making these interfaces with a new annotation.
+    i.e. @FunctionalInterface.
+    
+    
+ 
+ 4. forEach:
     Default implementation of java forEach method(default) in interable interface.
     Ex: List<Integer> numberList = new ArrayList<>(Arrays.asList(1,2,3,4,5));
     Consumer<Integer> action = Ststem.out::print;
     
     listObj.stream().forEach(action);
-    
+ 
 8.Optionals:
   Optional is a way of replacing nullable T references with a non-null value.
   An Optional may contain either non-null T reference or nothing.
