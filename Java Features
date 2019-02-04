@@ -60,6 +60,11 @@ Java 8 Features:
     2. The method with same signature in the "most specific default providing interface" is selected.
         Ex: if class Animal implements two interfaces i.e. Moveable and Walkable such that Walkable exends Moveable.Then Walkable is here
         most specific interface and default method will be chosen from here if method signature is matched.
+    3. If moveable and walkable are independent interfaces then serious conflict condition happen, and compiler then it is unable to decide.
+    We have provide the extra info that from which interface the default method should be called.
+    
+    Walkable.super.move();
+    Moveable.super.move();
         
     
         
@@ -71,6 +76,19 @@ Java 8 Features:
     Consumer<Integer> action = Ststem.out::print;
     
     listObj.stream().forEach(action);
+    
+6. Streams:
+    collect- To convert stream to list/map.
+    Consumer - Represents an operation that accepts a single input argument and returns no result. Ex. void accept(T t);
+    Function - Represents a Function that accepts one argument and produces a result.Ex. R apply(T t);
+    Predicate - Represents a predicate (boolean-valued function) of one argument. Ex. boolean test(T t);
+    Supplier - Represents a supplier of results. Ex: T get();
+    
+    i) Intermediate Operations:
+        Intermediate operations returns stream itslef.
+      a.Stream.filter()-To filter all elements of the stream and accepts predicate.
+        Ex: stream().filter((s)->s.startsWith("A")).map(String::toUpperCase).forEaCh(System.out::print);
+      b. Strema.map() - To Convert each element into another object via given function.
  
 8. Optionals:
   Optional is a way of replacing nullable T references with a non-null value.
