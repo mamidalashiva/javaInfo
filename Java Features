@@ -1,16 +1,17 @@
 Java 8 Features:
 1. Lamdba Expressions
 2. Functional Interface
-3. Stream
+3. Default Methods
 4. forEach
 5. Method References
-6. Default Methods
+6. Stream
 7. DateTime API
 8. Optionals
 
 
 1.Lambda expressions:
-    A landba expression is just an anonymous function and they are passed (mostly) to other functions as parameters.The most important feature of  Lamdba Expression is that "they execute in the context of 
+    A landba expression is just an anonymous function and they are passed (mostly) to other functions as parameters.The most important
+    feature of  Lamdba Expression is that "they execute in the context of 
     their  appearance.So, similar lamdba expression can be executed differently in some other context.
     Syntax:
         (x, y) -> x + y // This function takes twoparamters and return sum.
@@ -21,14 +22,34 @@ Java 8 Features:
     4. (String s)-> System.out.println(s);
     5. a->2*a;
     6. c->{/* some complex statement*/}
-
-
     
  2. Functional Interface:
     Single Abstract method interfaces.Java 8, enforces the rule of single responsibility by making these interfaces with a new annotation.
     i.e. @FunctionalInterface.
+    Do's & Don'ts:
+    * A functional interface has exactly one abstract method.Since default methods have an implementation,they are not abstract.Free to add 
+    default  methods to your  functional interface as many as you like.
+    * Only one abstract method is allowed.
+    * Functional interface is valid even if you remove the @FunctionlaInterface annotation would be ommitted.
+    * If an inteface declares an abstract method overriding one of the publc methods of java.lang.Object,that also does not count towards 
+    the interface's abstract method count.
     
+ Ex:
+        @FunctionalInterface
+        public interface MyFirstFunctionalInterface {
+        public void firstWork();
+        @Override
+        public String toString();                //Overridden from Object class
+        @Override
+        public boolean equals(Object obj);        //Overridden from Object class
+        }
     
+    Ref:https://stackoverflow.com/questions/27743315/a-summary-of-the-parameters-and-return-type-of-functional-interfaces-in-the-pack/28162720#28162720
+    
+ 3. Default Methods:
+    Definition:
+        
+ 
  
  4. forEach:
     Default implementation of java forEach method(default) in interable interface.
@@ -37,7 +58,7 @@ Java 8 Features:
     
     listObj.stream().forEach(action);
  
-8.Optionals:
+8. Optionals:
   Optional is a way of replacing nullable T references with a non-null value.
   An Optional may contain either non-null T reference or nothing.
   
