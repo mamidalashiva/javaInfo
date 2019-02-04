@@ -47,7 +47,21 @@ Java 8 Features:
     Ref:https://stackoverflow.com/questions/27743315/a-summary-of-the-parameters-and-return-type-of-functional-interfaces-in-the-pack/28162720#28162720
     
  3. Default Methods:
-    Definition:
+    Definition:Defaul methods enable you to add new functionality to the interfaces of your libraries and ensure binary compatibility 
+    with code written for older versions of those interfaces.
+    Ex: public interface Moveable{
+        default  void move(){
+        System.out.println("move default method");
+        }
+    }
+    Use: To enable the functionality of Lamdba expression in java.Lambda expressions are essentially of type of functional interface.
+    How conflicts are resolved:
+    1. Most preffered are the overridden  in classes.They will be matched and called if found before matching anything.
+    2. The method with same signature in the "most specific default providing interface" is selected.
+        Ex: if class Animal implements two interfaces i.e. Moveable and Walkable such that Walkable exends Moveable.Then Walkable is here
+        most specific interface and default method will be chosen from here if method signature is matched.
+        
+    
         
  
  
